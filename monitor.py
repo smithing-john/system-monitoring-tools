@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
 System Monitoring Tool
-Tracks CPU, memory, disk, and network usage
+Tracks CPU, memory, disk, and network usage with logging
 """
 
 import psutil
 import time
 import yaml
 from datetime import datetime
+from logger import setup_logger, log_system_stats
 
 def load_config():
     """Load configuration from config.yaml"""
@@ -55,6 +56,7 @@ def main():
     """Main monitoring loop"""
     config = load_config()
     interval = config.get('monitoring', {}).get('interval', 5)
+    logger = setup_logger()
     
     print(f"Starting system monitor (interval: {interval}s)")
     print("Press Ctrl+C to stop")
@@ -65,9 +67,11 @@ def main():
             memory = check_memory()
             disk = check_disk()
             display_stats(cpu, memory, disk)
+            log_system_stats(logger, cpu, memory, disk)
             time.sleep(interval)
     except KeyboardInterrupt:
         print("\n\nMonitoring stopped.")
+        logger.info("Monitoring session ended")
 
 if __name__ == "__main__":
     main()
