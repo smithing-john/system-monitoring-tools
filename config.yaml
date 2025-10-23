@@ -1,59 +1,26 @@
 monitoring:
-  interval: 5
+  interval: 3
   
   thresholds:
-    cpu_warning: 80
-    cpu_critical: 95
-    memory_warning: 75
-    memory_critical: 90
-    disk_warning: 80
-    disk_critical: 95
+    cpu_warning: 75
+    cpu_critical: 90
+    memory_warning: 70
+    memory_critical: 85
+    disk_warning: 75
+    disk_critical: 90
   
   metrics:
     - cpu
     - memory
     - disk
+    - network
   
   alerts:
-    enabled: false
+    enabled: true
     email: admin@example.com
-```
-
-### requirements.txt
-```
-psutil==5.9.5
-PyYAML==6.0.1
-```
-
-### .gitignore
-```
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-ENV/
-build/
-dist/
-*.egg-info/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-logs/
-
-# Personal notes
-notes/
-personal/
+    slack_webhook: ""
+  
+  logging:
+    level: INFO
+    retention_days: 30
+    max_file_size_mb: 50
