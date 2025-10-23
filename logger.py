@@ -18,6 +18,10 @@ def setup_logger(name='system_monitor'):
     logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
     
+    # Clear existing handlers to prevent duplicates
+    if logger.handlers:
+        logger.handlers.clear()
+    
     # File handler
     log_file = f"logs/monitor_{datetime.now().strftime('%Y%m%d')}.log"
     file_handler = logging.FileHandler(log_file)
@@ -50,3 +54,9 @@ def log_system_stats(logger, cpu, memory, disk):
         logger.warning(f"High memory usage detected: {memory['percent']}%")
     if disk['percent'] > 90:
         logger.warning(f"High disk usage detected: {disk['percent']}%")
+
+def log_error(logger, error_msg, exception=None):
+    """Log error with optional exception details"""
+    logger.error(error_msg)
+    if exception:
+        logger.exception(f"Exception details: {str(exception)}")
