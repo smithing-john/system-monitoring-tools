@@ -1,0 +1,52 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": "🚨 System Alert",
+        "emoji": true
+      }
+    },
+    {
+      "type": "section",
+      "fields": [
+        {
+          "type": "mrkdwn",
+          "text": "*Alert Type:*\n{{ALERT_TYPE}}"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*Severity:*\n{{SEVERITY}}"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*Hostname:*\n{{HOSTNAME}}"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*Timestamp:*\n{{TIMESTAMP}}"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Current Metrics:*\n• CPU: {{CPU_PERCENT}}%\n• Memory: {{MEMORY_PERCENT}}%\n• Disk: {{DISK_PERCENT}}%"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "mrkdwn",
+          "text": "Automated alert from System Monitoring Tools"
+        }
+      ]
+    }
+  ]
+}

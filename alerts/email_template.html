@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #d32f2f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 30px;
+        }
+        .alert-box {
+            background-color: #ffebee;
+            border-left: 4px solid #d32f2f;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .stats {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+        }
+        .footer {
+            background-color: #f5f5f5;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚠️ SYSTEM ALERT</h1>
+        </div>
+        <div class="content">
+            <h2>Critical Threshold Exceeded</h2>
+            <p>Your system has exceeded critical performance thresholds.</p>
+            
+            <div class="alert-box">
+                <strong>Alert Type:</strong> {{ALERT_TYPE}}<br>
+                <strong>Severity:</strong> {{SEVERITY}}<br>
+                <strong>Timestamp:</strong> {{TIMESTAMP}}
+            </div>
+            
+            <h3>Current System Status</h3>
+            <div class="stats">
+                <div class="stat-row">
+                    <span>CPU Usage:</span>
+                    <strong>{{CPU_PERCENT}}%</strong>
+                </div>
+                <div class="stat-row">
+                    <span>Memory Usage:</span>
+                    <strong>{{MEMORY_PERCENT}}%</strong>
+                </div>
+                <div class="stat-row">
+                    <span>Disk Usage:</span>
+                    <strong>{{DISK_PERCENT}}%</strong>
+                </div>
+            </div>
+            
+            <h3>Recommended Actions</h3>
+            <ul>
+                <li>Check system logs for error messages</li>
+                <li>Identify processes consuming excessive resources</li>
+                <li>Consider scaling resources if sustained high usage</li>
+                <li>Review application performance metrics</li>
+            </ul>
+        </div>
+        <div class="footer">
+            System Monitoring Tools v1.0<br>
+            This is an automated alert. Do not reply to this email.
+        </div>
+    </div>
+</body>
+</html>
