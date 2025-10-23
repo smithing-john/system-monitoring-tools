@@ -1,2 +1,30 @@
-# system-monitoring-tools
-Personal scripts for system health checks and analysis
+# System Monitoring Tools
+
+A collection of Python scripts for monitoring system performance and resource utilization.
+
+## Features
+- Real-time CPU and memory monitoring
+- Disk usage tracking
+- Network statistics
+- Configurable alert thresholds
+
+## Requirements
+- Python 3.8+
+- psutil
+- pyyaml
+
+## Installation
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+```bash
+python monitor.py
+```
+
+## Configuration
+Edit `config.yaml` to customize monitoring parameters.
+
+## License
+MIT License - See LICENSE file for details

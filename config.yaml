@@ -1,0 +1,59 @@
+monitoring:
+  interval: 5
+  
+  thresholds:
+    cpu_warning: 80
+    cpu_critical: 95
+    memory_warning: 75
+    memory_critical: 90
+    disk_warning: 80
+    disk_critical: 95
+  
+  metrics:
+    - cpu
+    - memory
+    - disk
+  
+  alerts:
+    enabled: false
+    email: admin@example.com
+```
+
+### requirements.txt
+```
+psutil==5.9.5
+PyYAML==6.0.1
+```
+
+### .gitignore
+```
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Personal notes
+notes/
+personal/
