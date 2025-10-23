@@ -28,3 +28,10 @@ Edit `config.yaml` to customize monitoring parameters.
 
 ## License
 MIT License - See LICENSE file for details
+
+## Security
+
+This project does not store any sensitive information in the repository.
+All credentials and private data should be stored locally or in environment variables.
+
+See `.gitignore` for excluded file patterns.

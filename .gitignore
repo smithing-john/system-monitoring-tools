@@ -1,0 +1,9 @@
+# Sensitive files
+credentials.json
+*.key
+secrets/
+personal_notes/
+
+# Backups
+*.backup
+*.bak

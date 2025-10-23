@@ -1,0 +1,26 @@
+monitoring:
+  interval: 3
+  
+  thresholds:
+    cpu_warning: 75
+    cpu_critical: 90
+    memory_warning: 70
+    memory_critical: 85
+    disk_warning: 75
+    disk_critical: 90
+  
+  metrics:
+    - cpu
+    - memory
+    - disk
+    - network
+  
+  alerts:
+    enabled: true
+    email: admin@example.com
+    slack_webhook: ""
+  
+  logging:
+    level: INFO
+    retention_days: 30
+    max_file_size_mb: 50
